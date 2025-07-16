@@ -4,13 +4,13 @@ $gitHookFile = ".git/hooks/commit-msg"
 $scriptPath = "scripts/commit-msg.ps1"
 
 if (-not (Test-Path $scriptPath)) {
-    Write-Host "Could not find commit-msg.ps1 script." -ForegroundColor Red
+    Write-Host "❌ Could not find commit-msg.ps1 script." -ForegroundColor Red
     exit 1
 }
 
 $hookContent = @"
 #!/bin/sh
-pwsh -File "$(pwd)/scripts/commit-msg.ps1" "\$1"
+pwsh -File "$scriptPath" "`$1"
 "@
 
 Set-Content -Path $gitHookFile -Value $hookContent -Encoding UTF8
