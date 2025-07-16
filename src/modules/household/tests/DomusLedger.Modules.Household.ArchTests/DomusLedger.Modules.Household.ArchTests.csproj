@@ -4,7 +4,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
-	<PackageVersion Include="NetArchTest.Rules" />
+	<PackageReference Include="NetArchTest.Rules" />
   </ItemGroup>
 
   <ItemGroup>
