@@ -94,5 +94,3 @@ Yes, though not recommended. Use the `--no-verify` flag:
 ```bash
 git commit -m "some message" --no-verify
 ```
-
-But only use this if you're absolutely sure and have team approval.
