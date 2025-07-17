@@ -69,7 +69,7 @@ fix(auth): handle invalid token edge case
 ## Compliance
 
 - We will enforce client side compliance using the `commit-msg` git hook
-- We will use GitHub actions to implement server side compliance. The CI pipeline will fail if the commit message does not confirm to conventional commit
+- We will use GitHub actions to implement server side compliance. The CI pipeline will fail if the commit message does not confirm to conventional commit. The check will be performed on both push and pull requests
 
 ## References
 
