@@ -38,7 +38,7 @@ We will standardize all our tests using **xUnit** for the following reasons:
 |---------------------|-----------|-----------------------------------------------------------|
 | Unit Tests          | xUnit     | Test single methods or classes in isolation              |
 | Integration Tests   | xUnit     | Test database, APIs, and service boundaries               |
-| Architecture Tests  | NetArchTest / ArchUnit.NET | Enforce architectural constraints (hexagonal, layering) |
+| Architecture Tests  | NetArchTest | Enforce architectural constraints (hexagonal, layering etc.) |
 
 ### Additional Notes
 
