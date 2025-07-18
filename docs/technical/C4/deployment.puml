@@ -1,0 +1,22 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+
+title Deployment Diagram for Domus Ledger: Home Finance Management System
+
+Deployment_Node("PC", "Customer PC", "Microsoft Windows, Apple macOs"){
+
+Deployment_Node(app, "Domus Ledger Desktop App", "Microsoft Windows, Apple maOS"){
+
+ Container("core", "Domus Ledger Application ", "Avalonia, WPF, .Net 9")
+}
+Deployment_Node(sqllite, "Domus Ledger Database", "SQL Lite"){
+            ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, budgets, income, expenses, liabilities etc.")
+        }
+}
+
+
+Rel(core, db, "Reads from and writes to", "EF Core")
+
+
+SHOW_LEGEND()
+@enduml
