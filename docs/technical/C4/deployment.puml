@@ -5,9 +5,9 @@ title Deployment Diagram for Domus Ledger: Home Finance Management System
 
 Deployment_Node("PC", "Customer PC", "Microsoft Windows, Apple macOs"){
 
-Deployment_Node(app, "Domus Ledger Desktop App", "Microsoft Windows, Apple maOS"){
+Deployment_Node(app, "Domus Ledger Desktop App", "Avalonia"){
 
- Container("core", "Domus Ledger Application ", "Avalonia, WPF, .Net 9")
+ Container("core", "Domus Ledger Application ", ".Net 9", "Implements the core of the application using modular monolith")
 }
 Deployment_Node(sqllite, "Domus Ledger Database", "SQL Lite"){
             ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, budgets, income, expenses, liabilities etc.")
