@@ -1,0 +1,20 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title System Context diagram for Domus Ledger: Home Finance Management System
+
+Person(administrator, "Administrator", "Primary user of the system.")
+Person(regular_user, "Regular user","Regular user of the system.")
+
+System(domus_ledger, "Domus Ledger Home Finance Management System", "Allows administrator to set budgets and manage households. \n\n Allows regular users to add incomes, budgets, expenses, and investments. \n\n Calculates household net worth. \n\n Generates financial reports")
+System_Ext(mail_system, "E-mail system", "Email notification system")
+
+Rel(administrator, domus_ledger, "Uses")
+Rel(regular_user, domus_ledger,"Uses")
+Rel_Neighbor(domus_ledger, mail_system, "Sends Email Notification")
+Rel_Back(administrator, mail_system, "Sends e-mails to")
+Rel_Back(regular_user, mail_system, "Sends e-mails to")
+
+@enduml
