@@ -27,6 +27,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Lint Commit Messages
+        run: bash scripts/lint-commit-messages.sh
+        shell: bash
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
