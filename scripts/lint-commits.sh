@@ -10,6 +10,7 @@ COMMIT_MSG=$(git log -1 --pretty=%B)
 REGEX="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-zA-Z0-9\-]+\))?: .{1,}$"
 
 echo "Linting commit message:"
+echo "$COMMIT_MSG"
 if ! echo "$commit_msg" | grep -qE "$pattern"; then
     echo "Invalid commit message format!.Commit message must follow Conventional Commits format. Check https://www.conventionalcommits.org/en/v1.0.0/ for more details."
     echo ""
