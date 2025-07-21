@@ -1,5 +1,10 @@
 name: Security Analysis CodeQL Pipeline
 
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+
 on:
   push:
     branches:
