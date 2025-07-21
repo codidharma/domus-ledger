@@ -1,0 +1,43 @@
+name: Security Analysis CodeQL Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 0 ? * TUE,SAT *' # Every Tuesday and Saturday at midnight UTC
+env:
+    DOTNET_VERSION: '9.0.x'
+
+jobs:
+  analyze:
+
+    name: analyze
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['csharp']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
