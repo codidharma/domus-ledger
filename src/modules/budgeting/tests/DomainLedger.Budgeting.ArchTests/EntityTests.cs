@@ -1,19 +1,23 @@
-
 namespace DomainLedger.Budgeting.ArchTests;
 
-public class LayerTests : TestBase
+public class EntityTests : TestBase
 {
     [Fact]
-    public void Core_ShouldNotHaveDependenciesOn_Infrastructure()
+    public void Entities_ShouldBe_SealedClasses()
     {
         //Act
         TestResult testResult = Types
             .InAssembly(CoreAssembly)
-            .ShouldNot()
-            .HaveDependencyOn(InfrastructureAssembly.GetType().Name)
+            .That()
+            .Inherit(typeof(Entity))
+            .Should()
+            .BeSealed()
+            .And()
+            .BeClasses()
             .GetResult();
 
         //Assert
         Assert.True(testResult.IsSuccessful);
     }
+
 }

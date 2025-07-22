@@ -13,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\common\DomusLedger.Common.Domain\DomusLedger.Common.Domain.csproj" />
 		<ProjectReference Include="..\..\DomusLedger.Budgeting.Core\DomusLedger.Budgeting.Core.csproj" />
 		<ProjectReference Include="..\..\DomusLedger.Budgeting.Infrastructure\DomusLedger.Budgeting.Infrastructure.csproj" />
 	</ItemGroup>
