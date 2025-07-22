@@ -6,7 +6,7 @@ commit_msg=$(head -n1 "$commit_msg_file")
 
 
 # Conventional commit pattern. This patter checks for the syntax defined in the Conventional Commits specification.
-# It requires a type, an optional scope, and a description. The description must be between 1 and 50 characters.
+# It requires a type, an optional scope, and a description.
 # The pattern also allows for an optional body after a blank line.
 # The types are limited to a predefined set of valid types.
 # For more details, see: https://www.conventionalcommits.org/en/v1.0.0/
