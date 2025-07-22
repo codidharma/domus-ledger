@@ -14,6 +14,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\DomusLedger.Budgeting.Core\DomusLedger.Budgeting.Core.csproj" />
+		<ProjectReference Include="..\..\DomusLedger.Budgeting.Infrastructure\DomusLedger.Budgeting.Infrastructure.csproj" />
 	</ItemGroup>
   <ItemGroup>
     <Using Include="Xunit" />
