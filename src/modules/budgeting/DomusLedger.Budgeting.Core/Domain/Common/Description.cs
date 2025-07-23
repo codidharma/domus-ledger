@@ -11,7 +11,7 @@ public sealed record Description : ValueObject
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            var InvalidNameError = Error.InvalidDomain("Budgeting.InvalidDomainValue", "Name can not be null, empty or whitespace string.");
+            var InvalidNameError = Error.InvalidDomain("Budgeting.InvalidDomainValue", "Description can not be null, empty or whitespace string.");
             return Result.Failure<Description>(InvalidNameError);
 
         }
