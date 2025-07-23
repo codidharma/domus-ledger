@@ -1,2 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\DomusLedger.Common.Domain\DomusLedger.Common.Domain.csproj" />
+  </ItemGroup>
 </Project>
