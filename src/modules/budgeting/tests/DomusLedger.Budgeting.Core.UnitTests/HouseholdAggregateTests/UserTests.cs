@@ -13,10 +13,13 @@ public class UserTests
         Email email = Email.Create("john.wick@testserver.com").Value;
         Gender gender = Gender.Create("Male").Value;
         Role role = Role.Admin;
+        string imagePath = Path.GetFullPath("..\\..\\..\\Common\\TestImage.jpg");
+        byte[] imageBytes = File.ReadAllBytes(imagePath);
+        Avatar avatar = Avatar.Create(imageBytes).Value;
 
 
         //Act
-        Result<User> createResult = User.Create(name, email, gender, role);
+        Result<User> createResult = User.Create(name, email, gender, role, avatar);
 
         //Assert
         Assert.True(createResult.IsSuccess);
@@ -27,5 +30,6 @@ public class UserTests
         Assert.Equal(email, user.Email);
         Assert.Equal(gender, user.Gender);
         Assert.Equal(role, user.Role);
+        Assert.Equal(avatar, user.Avatar);
     }
 }
